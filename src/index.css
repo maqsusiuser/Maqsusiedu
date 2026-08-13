@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+/* Brand palette sampled from the MaqsusiEduTech logo (gold -> orange -> red -> pink -> purple) */
+@theme {
+  --color-brand-gold: #fdc14e;
+  --color-brand-orange: #f95e26;
+  --color-brand-red: #eb2e38;
+  --color-brand-pink: #f5367a;
+
+  --color-brand-purple-50: #fdf2f8;
+  --color-brand-purple-100: #fce0ee;
+  --color-brand-purple-200: #f8c2dd;
+  --color-brand-purple-300: #f092be;
+  --color-brand-purple-400: #e8639f;
+  --color-brand-purple-500: #d6407f;
+  --color-brand-purple-600: #b92868;
+  --color-brand-purple-700: #8a1554;
+  --color-brand-purple-800: #6e1043;
+  --color-brand-purple-900: #52092f;
+  --color-brand-purple-950: #350720;
+}
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #1e293b;
+    background-color: #f8fafc;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .font-kids {
+    font-family: 'Fredoka', cursive, sans-serif;
+  }
+}
+
+/* Custom CSS Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-18px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes rainbow-border {
+  0% { border-color: #f43f5e; }
+  25% { border-color: #8b5cf6; }
+  50% { border-color: #06b6d4; }
+  75% { border-color: #10b981; }
+  100% { border-color: #f59e0b; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.bg-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s infinite;
+}
+
+.rainbow-box {
+  animation: rainbow-border 6s infinite linear;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
